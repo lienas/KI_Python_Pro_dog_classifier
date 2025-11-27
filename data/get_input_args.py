@@ -32,7 +32,7 @@ def get_input_args():
     values are used for the missing arguments.
     Command Line Arguments:
       1. Image Folder as --dir with default value 'pet_images'
-      2. CNN Model Architecture as --arch with default value 'vgg'
+      2. CNN Model Architecture as --arch with default value 'vgg' or one of resnet, alexnet
       3. Text File with Dog Names as --dogfile with default value 'dognames.txt'
     This function returns these arguments as an ArgumentParser object.
     Parameters:
