@@ -12,7 +12,13 @@ vgg16 = models.vgg16(pretrained=True)
 models = {'resnet': resnet18, 'alexnet': alexnet, 'vgg': vgg16}
 
 # obtain ImageNet labels
-with open('imagenet1000_clsid_to_human.txt') as imagenet_classes_file:
+import os
+# get the directory where this script (classifier.py) is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# construct the full path to the text file
+file_path = os.path.join(script_dir, 'imagenet1000_clsid_to_human.txt')
+
+with open(file_path) as imagenet_classes_file:
     imagenet_classes_dict = ast.literal_eval(imagenet_classes_file.read())
 
 def classifier(img_path, model_name):
