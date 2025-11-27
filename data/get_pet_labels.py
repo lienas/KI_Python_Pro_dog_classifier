@@ -58,7 +58,7 @@ def get_pet_labels(image_dir):
             # Sets string to lower case string
             low_pet_image = filename.lower()
 
-            # Splits lower case string by _ to break into words 
+            # Splits lower case string by _ to break into words
             word_list_pet_image = low_pet_image.split("_")
 
             # Create pet_name starting as empty string
@@ -66,12 +66,12 @@ def get_pet_labels(image_dir):
 
             # Loops to check if word in pet name is only
             # alphabetic characters - if true append word
-            # to pet_name separated by trailing space 
+            # to pet_name separated by trailing space
             for word in word_list_pet_image:
                 if word.isalpha():
                     pet_name += word + " "
 
-            # Strip off starting/trailing whitespace characters 
+            # Strip off starting/trailing whitespace characters
             pet_label = pet_name.strip()
             # only add if not already in dictionary
             if filename not in results_dic:
