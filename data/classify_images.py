@@ -74,9 +74,22 @@ def classify_images(images_dir, results_dic, model):
     for key in results_dic:
         # Get the full path to the image file
         full_path = images_dir + '/' + key
+        # Runs classifier function to classify the images classifier function
+        # convert to lower and strip white spaces
         model_label = classifier(full_path, model).lower().strip()
 
-        print(model_label)
+        # defines truth as pet image label
+        truth = results_dic[key][0]
+
+        # print(f'classifier: {model_label}, truth: {truth}')
+
+        # If the pet image label is found within the classifier label list of terms
+        # as an exact match to on of the terms in the list - then they are added to
+        # results_dic as an exact match(1) using extend list function
+        if truth in model_label:
+            results_dic[key].extend([model_label, 1])
+        else:
+            results_dic[key].extend([model_label, 0])
 
     return None
 
