@@ -58,6 +58,10 @@ def get_pet_labels(image_dir):
             # Sets string to lower case string
             low_pet_image = filename.lower()
 
+            # Remove file extension
+            if "." in low_pet_image:
+                low_pet_image = low_pet_image.rsplit(".", 1)[0]
+
             # Splits lower case string by _ to break into words
             word_list_pet_image = low_pet_image.split("_")
 
