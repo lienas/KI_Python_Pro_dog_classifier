@@ -1,4 +1,4 @@
 [flake8]
 max-line-length = 100
 # ignore line too long
-ignore: E501, F405, W503
+ignore: E501, F405, W503, F403, E129
